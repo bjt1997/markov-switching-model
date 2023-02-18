@@ -1,14 +1,13 @@
-# Markov Switching Multi-fractal model
-BT variation of MSM model is implemented in Go.
+# Markov Switching Multi-Fractal model
 
-## Model
+## The MSM Model
 De-meaned returns are modelled as r_t = s_t N(0, 1), where r_t is return at time t and s_t is (heteroskedastic) volatility modelled as s_t = s0 sqrt(M_1 M_2 ... M_k). k is the model dimension and M_i are 2-state Markov Chains.
 
 Refer to Calvet and Fisher (2001)[^1]
 
 [^1]: Calvet, L.; Fisher, A. (2001). "Forecasting multifractal volatility" [(PDF)](https://archive.nyu.edu/bitstream/2451/26894/2/wpa99017.pdf). Journal of Econometrics. 105: 27–58.
 
-## BT Variation
+## My Variation aka BT Variation
 The original model parametrises the transition probabilities of Markov chains M_i with just two parameters. So the model is parsimonious and parameters do not grow with k. In BT variation, each chain M_i is characterised by a probability parameter g_i (transition matrix [1-gi gi; gi 1-gi]). This allows k-2 more degrees of freedom.
 
 ## Go Implementation
